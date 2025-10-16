@@ -23,19 +23,31 @@ test:
 
 # Store production database in the storage/ directory, which by default
 # is mounted as a persistent Docker volume in config/deploy.yml.
+
+# In production, prefer:
+#  • Cache: Rails cache store via Redis (config.cache_store).
+#  • Queue: a background job system like Sidekiq/ActiveJob with Redis.
+#  • Cable: ActionCable with Redis.
 production:
   primary:
-    <<: *default
-    database: storage/production.sqlite3
+    adapter: postgresql
+    url: <%= ENV.fetch("DATABASE_URL") %>
+    encoding: unicode
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
+
+  # Optional: share the same DB; mark non-primary DBs without migrations.
   cache:
-    <<: *default
-    database: storage/production_cache.sqlite3
-    migrations_paths: db/cache_migrate
+    adapter: postgresql
+    url: <%= ENV.fetch("DATABASE_URL") %>
+    database_tasks: false
+
   queue:
-    <<: *default
-    database: storage/production_queue.sqlite3
-    migrations_paths: db/queue_migrate
+    adapter: postgresql
+    url: <%= ENV.fetch("DATABASE_URL") %>
+    database_tasks: false
+
   cable:
-    <<: *default
-    database: storage/production_cable.sqlite3
-    migrations_paths: db/cable_migrate
+    adapter: postgresql
+    url: <%= ENV.fetch("DATABASE_URL") %>
+    database_tasks: false
+
