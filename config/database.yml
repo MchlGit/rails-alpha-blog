@@ -11,14 +11,14 @@ default: &default
 
 development:
   <<: *default
-  database: storage/development.sqlite3
+  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: storage/test.sqlite3
+  database: db/test.sqlite3
 
 
 # Store production database in the storage/ directory, which by default
@@ -31,23 +31,23 @@ test:
 production:
   primary:
     adapter: postgresql
-    url: <%= ENV.fetch("DATABASE_URL") %>
+    url: <%= ENV["DATABASE_URL"] %>
     encoding: unicode
     pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
 
   # Optional: share the same DB; mark non-primary DBs without migrations.
   cache:
     adapter: postgresql
-    url: <%= ENV.fetch("DATABASE_URL") %>
+    url: <%= ENV["DATABASE_URL"] %>
     database_tasks: false
 
   queue:
     adapter: postgresql
-    url: <%= ENV.fetch("DATABASE_URL") %>
+    url: <%= ENV["DATABASE_URL"] %>
     database_tasks: false
 
   cable:
     adapter: postgresql
-    url: <%= ENV.fetch("DATABASE_URL") %>
+    url: <%= ENV["DATABASE_URL"] %>
     database_tasks: false
 
