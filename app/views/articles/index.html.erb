@@ -13,8 +13,19 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= article.description %></td>
-        <td>action example</td>
+        <td><%= link_to 'Show', article_path(article) %></td>
+        <td><%= link_to "Edit",
+                      article_path(article),
+                      data: { turbo_method: :get } %>
+        </td>
+        <td>
+          <%= link_to "Delete",
+                      article_path(article),
+                      data: { turbo_method: :delete } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
