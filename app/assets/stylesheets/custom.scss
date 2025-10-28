@@ -1,0 +1,22 @@
+body {
+  background-color: #e1e1e1; /* You can use a color name, hex code, or RGB value */
+}
+
+.navbar {
+  background-color: #a21616 !important; /* red */
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+}
+.navbar-brand {
+  color: white;
+  font-size: xxx-large;
+  letter-spacing: -2.5px;
+}
+.navbar-nav {
+  margin-left: auto !important;
+}
+#btn-search {
+  color: #e1e1e1;
+  background-color: #730404;
+}

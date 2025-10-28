@@ -1,5 +1,17 @@
 {
+  "name": "rails-alpha-blog",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
   "dependencies": {
-    "@hotwired/turbo-rails": "^8.0.18"
+    "@hotwired/turbo-rails": "^8.0.18",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8",
+    "jquery": "^3.7.1",
+    "popper.js": "^1.16.1",
+    "sass": "^1.93.2"
+  },
+  "scripts": {
+    "build:css": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "watch:css": "sass --watch ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   }
 }

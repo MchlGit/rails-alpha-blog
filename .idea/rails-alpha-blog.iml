@@ -54,6 +54,7 @@
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.3.5, RVM: ruby-3.4.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.5.4, RVM: ruby-3.4.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, RVM: ruby-3.4.6) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cssbundling-rails (v1.4.3, RVM: ruby-3.4.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="date (v3.4.1, RVM: ruby-3.4.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="debug (v1.11.0, RVM: ruby-3.4.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="dotenv (v3.1.8, RVM: ruby-3.4.6) [gem]" level="application" />
