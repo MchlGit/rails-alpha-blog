@@ -1,22 +1,47 @@
+/*
+  ========================================
+  Custom styles
+  ========================================
+*/
+
 body {
   background-color: #e1e1e1; /* You can use a color name, hex code, or RGB value */
 }
 
+/*
+  ========================================
+  Navigation Bar
+  ========================================
+*/
 .navbar {
   background-color: #a21616 !important; /* red */
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: bold;
 }
-.navbar-brand {
+#logo {
   color: white;
-  font-size: xxx-large;
+  font-size: xx-large;
   letter-spacing: -2.5px;
 }
+
 .navbar-nav {
   margin-left: auto !important;
 }
-#btn-search {
+#btn-custom {
   color: #e1e1e1;
   background-color: #730404;
+}
+
+/*
+  ========================================
+  Home Page
+  ========================================
+*/
+
+.jumbotron {
+  background-image: url("home-page.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
