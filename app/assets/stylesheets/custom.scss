@@ -40,8 +40,21 @@ body {
 */
 
 .jumbotron {
-  background-image: url("home-page.jpg");
+  background-image: url("home-page-2.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 425px;
 }
+
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+
