@@ -65,7 +65,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+  gem "pg"
 end
 
 gem "cssbundling-rails", "~> 1.4"
