@@ -7,6 +7,13 @@
 body {
   background-color: #e1e1e1; /* You can use a color name, hex code, or RGB value */
 }
+.page-title {
+  color: #1f2524;
+}
+
+#home-container {
+  margin-top: 25px;
+}
 
 /*
   ========================================
@@ -49,12 +56,27 @@ body {
 
 html, body {
   height: 100%;
-  min-height: 100vh;
-  margin: 0;
 }
 
 main {
   flex: 1 0 auto;
 }
+
+/*
+  ========================================
+  All Articles Page
+  ========================================
+*/
+#article-title {
+  color: #a21616;
+  text-decoration: none;
+}
+
+/* Show underline on hover and keyboard focus */
+#article-title:hover,
+#article-title:focus-visible {
+  text-decoration: underline;
+}
+
 
 
