@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg" data-turbo-permanent>
   <div class="container-fluid">
     <%= link_to 'ALPHA BLOG', root_path, class:'navbar-brand', id:'logo' %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,12 +14,12 @@
           <li class="nav-item">
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="dropdown-toggle nav-link" href="#" id="articlesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-turbo="false">
               Articles
             </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to 'All Articles', articles_path, class:'nav-link' %></li>
-              <li><%= link_to 'Create Article', new_article_path, class:'nav-link' %></li>
+            <ul class="dropdown-menu" aria-labelledby="articlesDropdown" data-bs-auto-close="false">
+              <li><%= link_to 'All Articles', articles_path, class:'dropdown-item', data: { turbo: false } %></li>
+              <li><%= link_to 'Create Article', new_article_path, class:'dropdown-item', data: { turbo: false } %></li>
             </ul>
           </li>
         </ul>
