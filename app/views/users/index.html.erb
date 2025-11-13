@@ -1,16 +1,21 @@
-<p style="color: green"><%= notice %></p>
-
-<% content_for :title, "Users" %>
-
-<h1>Users</h1>
-
-<div id="users">
+<h1 class="text-center mt-4 fw-bold page-title">Alpha Bloggers</h1>
+<div class="container">
   <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
+    <div class="row justify-content-center my-4">
+      <div class="col-8">
+        <div class="card text-center shadow mb-5 bg-white">
+          <div class="card-header fst-italic"><%= user.username %></div>
+          <div class="card-body">
+            <%= gravatar_for(user, size: 150) %>
+            <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
+            <%= link_to 'View profile', user_path(user), class:'btn btn-outline-success' %>
+            <%= link_to "Edit profile", edit_user_path(user), class:'btn btn-outline-info'%>
+          </div>
+          <div class="card-footer text-muted">
+            <small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New user", new_user_path %>
