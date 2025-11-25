@@ -7,6 +7,7 @@
 body {
   background-color: #e1e1e1; /* You can use a color name, hex code, or RGB value */
 }
+
 .page-title {
   color: #1f2524;
 }
@@ -26,6 +27,7 @@ body {
   font-optical-sizing: auto;
   font-weight: bold;
 }
+
 #logo {
   color: white;
   font-size: xx-large;
@@ -35,6 +37,7 @@ body {
 .navbar-nav {
   margin-left: auto !important;
 }
+
 #btn-custom {
   color: #e1e1e1;
   background-color: #730404;
@@ -77,6 +80,46 @@ main {
 #article-title:focus-visible {
   text-decoration: underline;
 }
+
+/*Pagination styling*/
+.apple_pagination {
+  text-align: center;
+  padding: 1em;
+  cursor: default;
+}
+
+.apple_pagination a, .apple_pagination span {
+  padding: 0.2em 0.3em;
+}
+
+.apple_pagination .disabled {
+  color: #aaaaaa;
+}
+
+.apple_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  display: inline-block;
+  background-color: #bebebe;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
+}
+
+.apple_pagination a {
+  text-decoration: none;
+  color: black;
+}
+
+.apple_pagination a:hover, .apple_pagination a:focus {
+  text-decoration: underline;
+}
+
+
 
 
 
