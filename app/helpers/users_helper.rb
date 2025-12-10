@@ -1,7 +1,7 @@
 require "digest"
 require "uri"
 module UsersHelper
-  def gravatar_for(user, options = { size: 80})
+  def gravatar_for(user, options = { size: 80 })
     email_address = user.email.downcase
 
     # Create the SHA256 hash
@@ -14,5 +14,13 @@ module UsersHelper
     params = URI.encode_www_form("d" => default, "s" => size.to_i)
     gravatar_url = "https://www.gravatar.com/avatar/#{hash}?#{params}"
     image_tag(gravatar_url, alt: user.username, class: "rounded shadow mx-auto d-block", width: size, height: size)
+  end
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def logged_in?
+    !!current_user
   end
 end
