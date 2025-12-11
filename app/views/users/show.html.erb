@@ -1,8 +1,13 @@
 <h1 class="text-center mt-4 fw-bold page-title"><%= @user.username %>'s profile</h1>
 <%= gravatar_for @user, size: 200 %>
 <div class="text-center mt-4">
-  <% if logged_in? && @user == current_user %>
-    <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info" %>
+  <% if logged_in? %>
+    <% if @user == current_user %>
+      <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-outline-info" %>
+    <% end %>
+    <% if current_user.admin? %>
+      <%= link_to "Delete profile", user_path(@user), class: "btn btn-outline-danger", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } %>
+    <% end %>
   <% end %>
 </div>
 <h3 class="text-center mt-4 fw-bold page-title">Articles</h3>
