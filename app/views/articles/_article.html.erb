@@ -4,17 +4,19 @@
       <div class="col-8">
         <div class="card text-center shadow mb-5 bg-white">
           <div class="card-header fst-italic">
-            by  <%= link_to article.user.username, user_path(article.user), class:'text-decoration-none'%>
+            by  <%= link_to article.user.username, user_path(article.user), class: 'text-decoration-none' %>
           </div>
           <div class="card-body">
-            <h5><%= link_to article.title, article_path(article), class:'card-title', id:'article-title' %></h5>
+            <h5><%= link_to article.title, article_path(article), class: 'card-title', id: 'article-title' %></h5>
             <p class="card-text"><%= truncate(article.description, length: 100) %></p>
-            <%= link_to 'View', article_path(article), class:'btn btn-outline-success' %>
-            <%= link_to "Edit", edit_article_path(article), class:'btn btn-outline-info'%>
-            <%= link_to "Delete",
-                        article_path(article),
-                        data: { turbo_method: :delete,  turbo_confirm: 'Are you sure?'},
-                        class:'btn btn-outline-danger'%>
+            <%= link_to 'View', article_path(article), class: 'btn btn-outline-success' %>
+            <% if logged_in? && article.user == current_user %>
+              <%= link_to "Edit", edit_article_path(article), class: 'btn btn-outline-info' %>
+              <%= link_to "Delete",
+                          article_path(article),
+                          data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+                          class: 'btn btn-outline-danger' %>
+            <% end %>
           </div>
           <div class="card-footer text-muted">
             <small>Created <%= time_ago_in_words(article.created_at) %> ago,
